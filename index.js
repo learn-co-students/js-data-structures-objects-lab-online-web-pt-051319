@@ -1,22 +1,25 @@
-// Write your solution in this file!
-let drivers = new Object();
 
-function updateObjectWithKeyAndValue(object, key, value) {
+let driver = new Object();
+
+//making changes to the new object without affecting the driver
+function updateDriverWithKeyAndValue(object, key, value) {
   return Object.assign({}, object, { [key]: value })
 }
 
-function destructivelyUpdateObjectWithKeyAndValue(object, key, value) {
+//making changes to the driver
+function destructivelyUpdateDriverWithKeyAndValue(object, key, value) {
   object[key] = value;
   return object;
 }
-
-function deleteFromObjectByKey(object, key) {
+//object.key() returns all keys at the top level of hash
+// this function will delete the key/value pair for the key passed in from driver
+function deleteFromDriverByKey(object, key) {
   let newObj = Object.assign({}, object);
-  delete newObj.key;
+  delete newObj[key];
   return newObj;
 }
 
-function destructivelyDeleteFromObjectByKey(object, key) {
-  delete object.key;
+function destructivelyDeleteFromDriverByKey(object, key) {
+  delete object[key];
   return object;
 }
